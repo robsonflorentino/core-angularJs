@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.4</title>
+    <link rel="shortcut icon" href="">
+
+    <link rel="stylesheet" href="app/vendor/bootswatch-dist/css/bootstrap.min.css">
+
+    <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+
+    <!--[if IE]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#!/">Treinamento AngularJs</a>
+                <a class="navbar-brand" href="#!/calculator">Calculadora</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">&nbsp;</div>
+        <div ng-view></div>
+    </div>
+
+    <script data-main="app/js/app-main" src="app/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
