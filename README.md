@@ -16,20 +16,20 @@ Os arquivos de configuração da aplicação estão disposto das seguintes forma
 # Dependencias
 As bibliotecas do projeto são gerenciadas através do Bower, sendo necessária a instalação do mesmo.
 
-    ```
-        npm install -g bower
-    ```
+```
+npm install -g bower
+```
 
 # Instalação
 Clonando o projeto do GitHub.
 
-    ```
-        git clone https://github.com/robsonflorentino/core-application.git core-application
-    ```
+```
+git clone https://github.com/robsonflorentino/core-application.git core-application
+```
 
 Baixando as bibliotecas com o Bower.
 
-    ```
-        bower install
-    ```
+```
+bower install
+```
 
