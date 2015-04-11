@@ -1,1 +1,3 @@
+# Melhorias de infraestrutura
+- Adicionar biblioteca 'bootstrap-glyphicons' para obter mais icones disponíveis.
 
