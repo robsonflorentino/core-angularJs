@@ -16,12 +16,12 @@ require.config({
         // Utilitarios
         'LoDashService' : 'modules/utils/services/loDash.service',
         'UtilsModule' : 'modules/utils/utils.module',
-
-        // Calculator Module
-        'CalculatorService' : 'modules/calculator/services/calculator.service',
-        'CalculatorController' : 'modules/calculator/controllers/calculator.controller',
-        'CalculatorDirective' : 'modules/calculator/directives/calculator.directive',
-        'CalculatorModule' : 'modules/calculator/calculator.module'
+      
+        // Calculador
+        'CalculadoraService' : 'modules/calculadora/services/calculadora.service',
+        'CalculadoraController' : 'modules/calculadora/controllers/calculadora.controller', 
+        'CalculadoraDirective' : 'modules/calculadora/directives/calculadora.directive',
+        'CalculadoraModule' : 'modules/calculadora/calculadora.module'
     },
 
     /**
@@ -54,6 +54,6 @@ require.config({
         }
     },
 
-    deps : ['./app/js/app-bootstrap.js']
+    deps : ['./app/js/app-init.js']
 });
 

@@ -1,4 +1,4 @@
-# core-application (AngularJs)
+#  Core-application (AngularJs)
 Esqueleto de projeto para desenvolvimento de uma aplicação utilizando AngularJs e RequireJs.
 
 # Descrição
