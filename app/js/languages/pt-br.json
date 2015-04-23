@@ -1,0 +1,11 @@
+{
+  "application" : {
+    "stocks" : {
+      "title" : "Cotações!!!",
+      "desc" : "Exercício utilizando as bibliotecas de \"localization\", e \"translate\".",
+      "labels" : {
+        "currency" : "Valores"
+      }
+    }
+  }
+}

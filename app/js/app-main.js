@@ -11,17 +11,17 @@ require.config({
         'bootstrap' : '../vendor/bootswatch-dist/js/bootstrap.min',
         'angular' : '../vendor/angular/angular.min',
         'ngRoute' : '../vendor/angular-route/angular-route',
+        'ngCookies' : '../vendor/angular-cookies/angular-cookies.min',
+        'ngStorageCookies' : '../vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.min',
+        'ngDynamicLocale' : '../vendor/angular-dynamic-locale/dist/tmhDynamicLocale',
+        'ngTranslate' : '../vendor/angular-translate/angular-translate.min',
+        'ngTranslateLoaderStaticFiles' : '../vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min',
         'loDash' : '../vendor/lodash/lodash.min',
 
         // Utilitarios
         'LoDashService' : 'modules/utils/services/loDash.service',
-        'UtilsModule' : 'modules/utils/utils.module',
-      
-        // Calculador
-        'CalculadoraService' : 'modules/calculadora/services/calculadora.service',
-        'CalculadoraController' : 'modules/calculadora/controllers/calculadora.controller', 
-        'CalculadoraDirective' : 'modules/calculadora/directives/calculadora.directive',
-        'CalculadoraModule' : 'modules/calculadora/calculadora.module'
+        'LanguageController': 'modules/utils/controllers/language.controller',
+        'UtilsModule' : 'modules/utils/utils.module'
     },
 
     /**
@@ -47,7 +47,27 @@ require.config({
         'ngRoute' : {
             deps : ['angular']
         },
+      
+        'ngCookies' : {
+            deps : ['angular']
+        },
+      
+        'ngStorageCookies' : {
+          deps : ['angular', 'ngCookies']
+        },
+      
+        'ngDynamicLocale' : {
+          deps : ['angular']
+        },
+      
+        'ngTranslate' : {
+            deps : ['angular']
+        },
 
+        'ngTranslateLoaderStaticFiles' : {
+          deps : ['angular', 'ngTranslate']
+        },
+      
         'bootstrap' : {
             exports : 'bootstrap',
             deps : ['jQuery']

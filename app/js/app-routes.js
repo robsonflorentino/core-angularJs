@@ -4,11 +4,21 @@ var appRoutes = function(app) {
         function($routeProvider, $locationProvider, $httpProvider){
             $locationProvider.hashPrefix('!');
           
-            $routeProvider.when('/calculadora', {
-              templateUrl : 'app/views/calculadora/calculadora.view.html',
-              controller : 'CalculadoraController'
-            })
+            // Exercício Calculadora
+//            $routeProvider.when('/samples', {
+//              templateUrl : 'app/views/samples/sample.view.html',
+//              controller : 'SampleController'
+//            });
+          
+            $routeProvider.when('/', {
+              templateUrl : 'app/views/default/home.view.html'
+            });
+          
+            $routeProvider.when('/cotacao', {
+              templateUrl : 'app/views/cotacao/cotacao.view.html'
+            });
 
+            // Home
             $routeProvider.otherwise({
                 redirectTo : '/'
             });
