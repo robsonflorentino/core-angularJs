@@ -1,10 +1,30 @@
 {
   "application" : {
-    "stocks" : {
-      "title" : "Cotações!!!",
-      "desc" : "Exercício utilizando as bibliotecas de \"localization\", e \"translate\".",
-      "labels" : {
-        "currency" : "Valores"
+    "home_title" : "Projeto",
+    "languages" : {
+      "portuguese" : "Português",
+      "english" : "Inglês",
+      "spanish" : "Espanhol"
+    },
+    "menu" : {
+      "home" : "Home",
+      "item1" : "Exercícios",
+      "sub_item1" : {
+        "item1" : "Tradutor"
+      }
+    },
+    "views" : {
+      "home" : {
+        "title" : "Curso AngularJs!",
+        "desc" : "Exemplos, exercícios e estudos de um projeto de arquitetura utilizando:",
+        "content" : ""
+      },
+      "stocks" : {
+        "title" : "Localização & Internacionalização",
+        "desc" : "Exercício utilizando as bibliotecas de \"localization\", e \"translate\".",
+        "labels" : {
+          "currency" : "Valores"
+        }
       }
     }
   }

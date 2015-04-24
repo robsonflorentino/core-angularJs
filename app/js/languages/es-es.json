@@ -1,0 +1,31 @@
+{
+  "application" : {
+    "home_title" : "Proyecto",
+    "languages" : {
+      "portuguese" : "Portugués",
+      "english" : "Inglés",
+      "spanish" : "Español"
+    },
+    "menu" : {
+      "home" : "Home",
+      "item1" : "Ejercicios",
+      "sub_item1" : {
+        "item1" : "Traductor"
+      }
+    },
+    "views" : {
+      "home" : {
+        "title" : "AngularJs Formación!",
+        "desc" : "Ejemplos, ejercicios y estudios de un proyecto arquitectónico usando:",
+        "content" : ""
+      },
+      "stocks" : {
+        "title" : "Localización & Internacionalización",
+        "desc" : "Ejercicio utilizando las bibliotecas de \"localization\", y \"translate\".",
+        "labels" : {
+          "currency" : "Valores"
+        }
+      }
+    }
+  }
+}

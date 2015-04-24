@@ -17,6 +17,10 @@ var appRoutes = function(app) {
             $routeProvider.when('/cotacao', {
               templateUrl : 'app/views/cotacao/cotacao.view.html'
             });
+          
+            $routeProvider.when('/authenticator', {
+              templateUrl : 'app/views/authenticator/authenticator.view.html'
+            });
 
             // Home
             $routeProvider.otherwise({

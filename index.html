@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" href="app/vendor/bootswatch-dist/css/bootstrap-theme.min.css"> -->
 
     <!--[if IE]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -31,21 +32,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#!/">Projetos</a>
+          <a class="navbar-brand" href="#!/" translate >application.home_title</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#!/">Home</a></li>
+            <li><a href="#!/" translate >application.menu.home</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercícios <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span translate >application.menu.item1</span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#!/cotacao">Cotação (Translate) </a></li>
+                <li><a href="#!/cotacao" translate >application.menu.sub_item1.item1</a></li>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
-            <li ng-class="{ active: isActive('pt-br')}" ><a href="" ng-click="setLang('pt-br')" translate >Português</a></li>
-            <li ng-class="{ active: isActive('en-us')}" ><a href="" ng-click="setLang('en-us')" translate >English</a></li>
+            <li ng-class="{ active: isActive('pt-br')}" ><a href="" ng-click="setLang('pt-br')" translate >application.languages.portuguese</a></li>
+            <li ng-class="{ active: isActive('en-us')}" ><a href="" ng-click="setLang('en-us')" translate >application.languages.english</a></li>
+            <li ng-class="{ active: isActive('es-es')}" ><a href="" ng-click="setLang('es-es')" translate >application.languages.spanish</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
