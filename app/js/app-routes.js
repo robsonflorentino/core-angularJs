@@ -14,12 +14,8 @@ var appRoutes = function(app) {
               templateUrl : 'app/views/default/home.view.html'
             });
           
-            $routeProvider.when('/cotacao', {
-              templateUrl : 'app/views/cotacao/cotacao.view.html'
-            });
-          
-            $routeProvider.when('/authenticator', {
-              templateUrl : 'app/views/authenticator/authenticator.view.html'
+            $routeProvider.when('/cash-flow', {
+              templateUrl : 'app/views/cash-flow/cash-flow.view.html'
             });
 
             // Home

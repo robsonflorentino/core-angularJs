@@ -76,4 +76,3 @@ require.config({
 
     deps : ['./app/js/app-init.js']
 });
-

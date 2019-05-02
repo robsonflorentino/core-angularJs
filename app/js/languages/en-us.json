@@ -1,6 +1,6 @@
 {
   "application" : {
-    "home_title" : "Project",
+    "home_title" : "Rocksteria",
     "languages" : {
       "portuguese" : "Portuguese",
       "english" : "English",
@@ -10,7 +10,7 @@
       "home" : "Home",
       "item1" : "Exercicies",
       "sub_item1" : {
-        "item1" : "Translate"
+        "item1" : "Cash Flow"
       }
     },
     "views" : {

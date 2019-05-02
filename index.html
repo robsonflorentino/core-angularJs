@@ -10,8 +10,7 @@
     <link rel="shortcut icon" href="">
 
     <link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
-<!-- <link rel="stylesheet" href="app/vendor/bootswatch-dist/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="app/vendor/bootswatch-dist/css/bootstrap.min.css">
 
     <!--[if IE]>
       <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,7 +34,7 @@
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+      <div class="container theme-darkly">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -51,31 +50,30 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span translate >application.menu.item1</span><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#!/cotacao" translate >application.menu.sub_item1.item1</a></li>
+                <li><a href="#!/cash-flow" translate >application.menu.sub_item1.item1</a></li>
               </ul>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
+          <!-- <ul class="nav navbar-nav navbar-right" ng-controller="LanguageController">
             <li ng-class="{ active: isActive('pt-br')}" ><a href="" ng-click="setLang('pt-br')" translate >application.languages.portuguese</a></li>
             <li ng-class="{ active: isActive('en-us')}" ><a href="" ng-click="setLang('en-us')" translate >application.languages.english</a></li>
             <li ng-class="{ active: isActive('es-es')}" ><a href="" ng-click="setLang('es-es')" translate >application.languages.spanish</a></li>
-          </ul>
+          </ul> -->
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container  theme-darkly">
         <div class="row">&nbsp;</div>
         <div ng-view></div>
     </div>
 
-     <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Callink Serviços de Callcenter Ltda.</p>
+<!--      <footer class="footer">
+      <div class="container theme-darkly">
+        <p class="text-muted">Rocksteria Moto Clube 2019.</p>
       </div>
-    </footer>
+    </footer> -->
 
     <script data-main="app/js/app-main" src="app/vendor/requirejs/require.js"></script>
-
 </body>
 </html>
