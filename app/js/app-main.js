@@ -8,7 +8,8 @@ require.config({
      */
     paths : {
         'jQuery' : '../vendor/jquery/dist/jquery.min',
-        'bootstrap' : '../vendor/bootswatch-dist/js/bootstrap.min',
+        'bootstrap' : '../vendor/bootstrap/dist/js/bootstrap.min',
+        'popper': '../vendor/popper.js/dist/popper.min',
         'angular' : '../vendor/angular/angular.min',
         'ngRoute' : '../vendor/angular-route/angular-route',
         'ngCookies' : '../vendor/angular-cookies/angular-cookies.min',
@@ -21,7 +22,11 @@ require.config({
         // Utilitarios
         'LoDashService' : 'modules/utils/services/loDash.service',
         'LanguageController': 'modules/utils/controllers/language.controller',
-        'UtilsModule' : 'modules/utils/utils.module'
+        'UtilsModule' : 'modules/utils/utils.module',
+
+        // Movimentação financeira
+        'CashFlowController': 'modules/cash-flow/controllers/cash-flow.controller',
+        'CashFlowModule' : 'modules/cash-flow/cash-flow.module'
     },
 
     /**

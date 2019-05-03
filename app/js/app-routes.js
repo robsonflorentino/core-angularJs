@@ -11,11 +11,12 @@ var appRoutes = function(app) {
 //            });
           
             $routeProvider.when('/', {
-              templateUrl : 'app/views/default/home.view.html'
+              templateUrl : 'app/views/default/home.view.html',
             });
           
             $routeProvider.when('/cash-flow', {
-              templateUrl : 'app/views/cash-flow/cash-flow.view.html'
+              templateUrl : 'app/views/cash-flow/cash-flow.view.html',
+              controller: 'CashFlowController'
             });
 
             // Home

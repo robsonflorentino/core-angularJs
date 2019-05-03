@@ -1,54 +1,172 @@
 <div class="container" role="main">
 	<div class="row">
-		<div class="col-sm-12">&nbsp;</div>
+		<div class="col-md-6">
+			<h1>Movimentação Financeira</h1>
+		</div>
+    <div class="col-md-6">
+      <h1 class="text-right">Meta {{cashFlow.billingGoal | currency:'R$'}}</h1>
+    </div>
 	</div>
 	<div class="row">
-		<div class="col-sm-12">
-			<p class="lead"><h1 class="text-center">Movimento de Caixa</h1></p>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col span1">Data</th>
-                  <th scope="col">Descriminação</th>
-                  <th scope="col">Entradas</th>
-                  <th scope="col">Saídas</th>
-                  <th scope="col">Ações</th>
-                </tr>
-              </thead>
+		<div class="col-md-12">
+			<h3>Caixa</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-striped">
 		        <colgroup>
-			        <col class="col-md-2">
-			        <col class="col-md-5">
-			        <col class="col-md-2">
-			        <col class="col-md-2">
-			        <col class="col-md-1">
+			        <col class="col-md-6">
+			        <col class="col-md-6">
 			    </colgroup>
               <tbody style="height: 100px !important; overflow: scroll; ">
                 <tr>
-                  <td scope="row">02/05/2019 16:00</td>
-                  <td>Compra no caixa</td>
-                  <td>R$ 50,00</td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-danger btn-xs">Remover</button></td>
+                  <td scope="row">Dinheiro em caixa</td>
+                  <td class="text-right">{{cashFlow.previousBalance | currency:'R$'}}</td>
                 </tr>
                 <tr>
-                  <td scope="row">02/05/2019 16:00</td>
-                  <td>Compra de gelo</td>
-                  <td></td>
-                  <td>R$ 15,00</td>
-                  <td><button type="button" class="btn btn-danger btn-xs">Remover</button></td>
+                  <td scope="row">Entradas</td>
+                  <td class="text-right"><span class="text-info">{{cashFlow.input | currency:'R$'}}<span></td>
                 </tr>
                 <tr>
-                  <td scope="row">02/05/2019 16:00</td>
-                  <td>Compra no caixa</td>
-                  <td>R$ 50,00</td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-danger btn-xs">Remover</button></td>
+                  <td scope="row">Saídas</td>
+                  <td class="text-right"><span class="text-danger">{{cashFlow.output | currency:'R$'}}</span></td>
+                </tr>
+                <tr>
+                  <td scope="row">Saldo Atual</td>
+                  <td class="text-right {{cashFlow.balance >= 0 ? 'text-info' : 'text-danger'}}">{{cashFlow.balance | currency:'R$'}}</td>
                 </tr>
               </tbody>
             </table>
-            <div class="btn-group btn-group-toggle pull-right" data-toggle="buttons">
-			  <button type="button" class="btn btn-primary btn-sm">Adicionar Movimento</button>
+		</div>
+		<div class="col-md-6 text-right">
+			<button type="button" class="btn btn-primary btn-lg" ng-show="!event.cashOpened" data-toggle="modal" data-target="#cash-flow">Abrir Caixa</button>
+			<button type="button" class="btn btn-danger btn-lg" ng-show="event.cashOpened" ng-click="closeCashFlow()">Fechar Caixa</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">&nbsp;</div>
+	</div>
+	<div class="row" ng-show="event.cashOpened">
+		<div class="col-md-12">
+			<h3>Movimentos</h3>
+		</div>
+	</div>
+	<div class="row" ng-show="event.cashOpened">
+		<div class="col-sm-12">
+      <table ng-if="cashFlow.movements.list.length == 0" class="table table-striped">
+          <tbody>
+              <tr>
+                  <td class="text-center">Nenhum movimento registrado!</td>                                
+              </tr>
+          </tbody>
+      </table>
+      <table class="table table-striped" ng-if="cashFlow.movements.list.length > 0">
+        <thead>
+          <tr>
+            <th scope="col span1">Data</th>
+            <th scope="col">Descriminação</th>
+            <th scope="col">Entradas</th>
+            <th scope="col">Saídas</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+      <colgroup>
+        <col class="col-md-2">
+        <col class="col-md-5">
+        <col class="col-md-2">
+        <col class="col-md-2">
+        <col class="col-md-1">
+    </colgroup>
+        <tbody style="height: 100px !important; overflow: scroll; ">
+          <tr ng-repeat="row in cashFlow.movements.list">
+            <td scope="row">{{$index + 1}}</td>
+            <td>{{row.description}}</td>
+            <td><span class="text-info">{{row.type.value == 'Entrada' ? row.value : '' | currency:'R$'}}</span></td>
+            <td><span class="text-danger">{{row.type.value == 'Saída' ? row.value : '' | currency:'R$'}}</span></td>
+            <td><button type="button" class="btn btn-danger btn-xs" ng-click="removeMovement($index)">Remover</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn-group btn-group-toggle pull-right" data-toggle="buttons">
+			  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#movement">Adicionar Movimento</button>
 			</div>
 		</div>
 	</div>
+
+  <!-- Modal cash flow -->
+  <div class="modal fade" id="cash-flow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Abertura de caixa</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="previousBalance">Dinheiro em caixa</label>
+              <input type="number" class="form-control form-control-sm text-right" id="previousBalance" placeholder="R$ 0,00" ng-model="cashFlow.previousBalance" ng-disabled="event.cashOpened">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-primary" ng-disabled="event.cashOpened" ng-click="openCashFlow()">Abrir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal movement -->
+  <div class="modal fade" id="movement" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Adicionar movimentação</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="type">Tipo</label>
+
+                  <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      {{cashFlow.movements.item.type.value || 'Selecione um tipo'}}
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li ng-repeat="item in cashFlow.movements.types"><a href="#!/cash-flow" ng-click="setMovementType(item)">{{item.value}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="value">Valor</label>
+                  <input type="number" class="form-control form-control-sm text-right" id="value" placeholder="R$ 0,00" ng-model="cashFlow.movements.item.value" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="description">Descrição</label>
+                  <input type="text" class="form-control form-control-sm" id="description" placeholder="Descrição breve do movimento" ng-model="cashFlow.movements.item.description" >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-primary" ng-disabled="cashFlow.movements.item.type == null" ng-click="addMovement()">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

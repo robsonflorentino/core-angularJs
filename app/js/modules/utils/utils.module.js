@@ -8,7 +8,7 @@ var UtilsModule = function(angular, LoDashService, LanguageController) {
     mod.controller('LanguageController', LanguageController);
 
     mod.run([function(){
-        console.debug('[LOAD-MODULE]', '\'UtilsModule\' foi carregado.');
+        console.debug('[LOAD-MODULE]\t', 'UtilsModule foi carregado.');
     }]);
 
     return mod;
